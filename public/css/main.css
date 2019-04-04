@@ -1,0 +1,138 @@
+html, body {
+    margin:0;
+    padding:0;
+    min-width:100%;
+    min-height:100%;
+}
+#navbar {
+    
+    width:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:10000;
+    border-bottom:2px solid #ddd;
+}
+#sidebar{
+    position:fixed;
+    float: left;
+    width: 200px;
+    height:100%;
+   
+    z-index:200;
+    border-right:3px solid #ddd;
+
+    
+}
+#sidebarlinks{
+    position: fixed;
+    top:50%;
+}
+.filler{
+    height:500px;
+    width:50px;
+}
+.montserrat{
+    font-family:'Montserrat'
+}
+.makesmall{
+    font-size:15px;
+    transition:1s
+}
+.transition{
+    transition:0;
+}
+.sidebarlinkstyle:active{
+    text-decoration:underline;
+    text-align:left;
+}
+.sidebarlinkstyle{
+    opacity:.7;
+    font-size:20px;
+}
+.sidebarinnerlinkstyle{
+    opacity:.4;
+    font-size:20px;
+    font-family:'Montserrat';
+}
+.taglinestyle{
+    color:black;
+    font-family:'Montserrat'
+}
+#reacticon{
+    height:50px;
+    width:50px;
+}
+.half{
+    position:absolute;
+    top:50%;
+}
+.fadeoutshinedesign{
+    opacity:.4;
+    transition:2s;
+}
+.fadeinshinedesign{
+    opacity: 1;
+    transition:2s;
+}
+.nightmodenavigation{
+    background-color:black;
+    transition:.5s;
+}
+.whitemodenavigation{
+    background-color:white;
+    transition:.5s;
+}
+#positionParalax{
+    position:absolute;
+    top:10;
+}
+.shinedesign{
+    font-size:14vw;
+    font-size:14vh;
+}
+
+.arrow-up {
+    
+    width: 0px; 
+    height: 0px; 
+    border-left: 74vh solid transparent;
+    border-right: 74vh solid transparent;
+    
+    border-bottom: 80vh solid black ;
+
+  }
+  
+  .arrow-up-grey{
+    border-bottom: 80vh solid grey ;
+}
+.nightmodewhite{
+    color:white;
+    transition:.5s;
+}
+  .arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 74vh solid transparent;
+    border-right: 74vh solid transparent;
+    
+    border-top: 80vh solid #ddd;
+  }
+  
+  .arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    
+    border-left: 60px solid green;
+  }
+  
+  .arrow-left {
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; 
+    
+    border-right:10px solid blue; 
+  }
