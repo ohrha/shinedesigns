@@ -31,7 +31,7 @@ app.controller('mainCtrl', ['$http','$scope','$timeout', function($http,$scope,$
     $scope.fadeInContact = false;
     $scope.menuPressedContact = false;
     $scope.homePageOpen = true;
-    $scope.nightMode = false;
+    $scope.nightMode = true;
     $scope.nightModeToggle = function(){
         console.log("nightModeToggled")
         if(!$scope.nightMode){
