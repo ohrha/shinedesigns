@@ -12,16 +12,16 @@ var router =  express.Router();
 
 //v/ar mongoose = require('mongoose');
 
-//var config = require('./config');
+var config = require('./config');
 
 
 
-//var database = require('./config/database');
+var database = require('./config/database');
 
 var port = process.env.PORT || 8081;
 
 
-/*
+
 mongoose.connect(database.url, function(err){
 
     if(err){
@@ -35,7 +35,7 @@ mongoose.connect(database.url, function(err){
     }
 
 })
-*///
+
 
 app.use(express.static(__dirname+'/public'));
 
