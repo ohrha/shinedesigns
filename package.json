@@ -1,0 +1,24 @@
+{
+  "name": "shinedesigns",
+  "version": "1.0.0",
+  "description": "The ShineDesigns Home Page",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohrha/shinedesigns.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ohrha/shinedesigns/issues"
+  },
+  "homepage": "https://github.com/ohrha/shinedesigns#readme"
+}
