@@ -14,7 +14,7 @@ app.config(function($httpProvider){
 
 
 });
-app.controller('mainCtrl', ['$http','$scope','$timeout','User', function($http,$scope,$timeout,User) {
+app.controller('mainCtrl', ['$http','$scope','$timeout','User','$interval', function($http,$scope,$timeout,User,$interval) {
 
     $scope.contactSlideInLeft = false;
     $scope.contactSlideUpDown = false;
@@ -36,14 +36,29 @@ app.controller('mainCtrl', ['$http','$scope','$timeout','User', function($http,$
     $scope.fadeOutLoading = false;
     $scope.finishedLoadingSuccess = false;
     $scope.picture="../images/moon.png"
+    $scope.progress = 0
     $scope.userObject = {
         userName : "",
         name : "",
         email : "",
         password : ""
     }
+    $scope.checkProgress = function(){
+        $scope.progress = 0;
+        $interval(function(){
+            if($scope.progress<86){
+                $scope.progress =$scope.progress +1;
+                console.log("og")
+            }else{
+                $timeout(function(){
+                   
+                },3000)
+            }
+           },50)
+    }
+   
     $scope.submitUser = function(){
-       
+   
         if(($scope.userObject.email !== null || "") &&
             ($scope.userObject.password !== null || "")){
                 $scope.loading= true;
@@ -57,6 +72,10 @@ app.controller('mainCtrl', ['$http','$scope','$timeout','User', function($http,$
 
                     $scope.fadeOutHomePage = true;
                 },5000)
+               
+                    
+               
+                
                 console.log($scope.userObject)
                // User.create($scope.userObject).then(function(data){
                //     console.log(data)
