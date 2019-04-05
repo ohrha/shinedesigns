@@ -102,6 +102,16 @@ html, body {
     border-bottom: 80vh solid black ;
 
   }
+  .inputfields{
+      width:80vh;
+
+  }
+  .inputfieldslast{
+      position:absolute;
+      top:80%;
+      left:25%;
+      width:40vh;
+  }
   
   .arrow-up-grey{
     border-bottom: 80vh solid grey ;

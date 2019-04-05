@@ -18,6 +18,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 
   <script src="./js/app.js" type="text/javascript"></script>
+  <script src="./services/userServices.js" type="text/javascript"></script>
+
 </head>
 
 <body ng-class="{'nightmodenavigation':nightMode,'whitemodenavigation':!nightMode}">
@@ -236,15 +238,31 @@
 
             </div>
             <div class="row">
-              <div class="input-field col s12">
-                <input value="Alvin" id="first_name2" type="text" class="validate">
-                <label class="active" for="first_name2">First Name</label>
+           
+              <div class = "inputfields">
+                <div class="input-field col s12">
+                <input value="Alvin" name ="email" ng-model="userObject.email" id="first_name2" type="email" class="validate">
+                <label class="active" for="first_name2">Email</label>
               </div>
               <div class="input-field col s12">
-                <input value="Alvin" id="first_name2" type="text" class="validate">
-                <label class="active" for="first_name2">First Name</label>
+                <input value="Alvin" name="password" ng-model="userObject.password" id="first_name2" type="password" class="validate">
+                <label class="active" for="first_name2">Password</label>
               </div>
-              <a class="waves-effect waves-light btn black">Let's Go!</a>
+              <a ng-click="submitUser()"class="waves-effect waves-light btn black">Let's Go!</a>
+              </div>
+              <!--
+                              <div class = "inputfieldslast center-align">
+              <div class="input-field col s12">
+                  <input value="Alvin" name="username" ng-model="userObject.userName" id="first_name2" type="text" class="validate">
+                  <label class="active" for="first_name2">First Name</label>
+                </div>
+                <div class="input-field col s12">
+                  <input value="Alvin" name="username" ng-model="userObject.userName" id="first_name2" type="text" class="validate">
+                  <label class="active" for="first_name2">First Name</label>
+                </div>
+               
+              </div>
+            -->
             </div>
           </div>
         </div>

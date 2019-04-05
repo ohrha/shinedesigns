@@ -1,5 +1,5 @@
 (function(){
-var app = angular.module('store',[]);
+var app = angular.module('store',['userServices']);
 
 																																																  
 
@@ -14,7 +14,7 @@ app.config(function($httpProvider){
 
 
 });
-app.controller('mainCtrl', ['$http','$scope','$timeout', function($http,$scope,$timeout) {
+app.controller('mainCtrl', ['$http','$scope','$timeout','User', function($http,$scope,$timeout,User) {
 
     $scope.contactSlideInLeft = false;
     $scope.contactSlideUpDown = false;
@@ -32,6 +32,25 @@ app.controller('mainCtrl', ['$http','$scope','$timeout', function($http,$scope,$
     $scope.menuPressedContact = false;
     $scope.homePageOpen = true;
     $scope.nightMode = false;
+    $scope.userObject = {
+        userName : "",
+        name : "",
+        email : "",
+        password : ""
+    }
+    $scope.submitUser = function(){
+       
+        if(($scope.userObject.email !== null || "") &&
+            ($scope.userObject.password !== null || "")){
+                console.log($scope.userObject)
+                User.create($scope.userObject).then(function(data){
+                    console.log(data)
+                })
+                
+            }else{
+                
+            }
+    }
     $scope.nightModeToggle = function(){
         console.log("nightModeToggled")
         if(!$scope.nightMode){

@@ -8,11 +8,11 @@ var path = require('path')
 
 var router =  express.Router();
 
-//var appRoute = require('./app/routes.js')(router);
+var appRoute = require('./app/routes.js')(router);
 
-//v/ar mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
-var config = require('./config');
+//var config = require('./config');
 
 
 
@@ -43,7 +43,7 @@ app.use(bodyParser.urlencoded({ 'extended': 'true' }));            // parse appl
 
 app.use(bodyParser.json());   
 
-//app.use('/api',appRoute)
+app.use('/api',appRoute)
 
 app.get('*', function (req, res) {
 
@@ -53,7 +53,7 @@ app.get('*', function (req, res) {
 
 });
 
-//require('./app/routes.js')(app);
+require('./app/routes.js')(app);
 
 app.listen(port);
 
