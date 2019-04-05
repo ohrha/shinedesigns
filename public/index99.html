@@ -148,9 +148,7 @@
 
     </div>
     <div class="row">
-<div class = "col s12 center-align">
-  <div id= "profilecircle"></div>
-</div>
+
     </div>
     <div class="row">
 
@@ -233,10 +231,8 @@
 
         <i ng-show="!nightMode" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"style="font-size:40px;"></i>
         <p ng-show="!nightMode"class = "montserrat animated flash infinite" style="font-size:20px; ">LOADING </p>
-        <i ng-show="nightMode && !finishedLoadingSuccess" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw grey-text "style="font-size:40px;" ng-class="{'animated':fadeOutLoading, 'fadeOut':fadeOutLoading}"></i>
-        <p ng-show="nightMode && !finishedLoadingSuccess" class = "montserrat animated flash infinite grey-text" style="font-size:20px; " ng-class="{ 'fadeOut':fadeOutLoading}">LOADING </p>
-        <i ng-show="nightMode && finishedLoadingSuccess" class="fa fa-check-circle animated  flash  grey-text "style="font-size:40px;" ng-class="{'animated':fadeOutLoading, 'fadeOut':fadeOutLoading}"></i>
-        <p ng-show="nightMode && finishedLoadingSuccess" class = "montserrat animated  flash grey-text" style="font-size:20px; " ng-class="{ 'fadeOut':fadeOutLoading}">SUCCESS! </p>
+        <i ng-show="nightMode" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw grey-text "style="font-size:40px;" ng-class="{'animated':fadeOutLoading, 'fadeOut':fadeOutLoading}"></i>
+        <p ng-show="nightMode" class = "montserrat animated flash infinite grey-text" style="font-size:20px; " ng-class="{ 'fadeOut':fadeOutLoading}">LOADING </p>
         <!--<i class="fa fa-cog fa-spin fa-3x fa-fw" ></i>-->
   
       </div>

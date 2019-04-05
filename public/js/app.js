@@ -32,6 +32,9 @@ app.controller('mainCtrl', ['$http','$scope','$timeout','User', function($http,$
     $scope.menuPressedContact = false;
     $scope.homePageOpen = true;
     $scope.nightMode = false;
+    $scope.loading = false;
+    $scope.fadeOutLoading = false;
+    $scope.finishedLoadingSuccess = false;
     $scope.userObject = {
         userName : "",
         name : "",
@@ -42,10 +45,21 @@ app.controller('mainCtrl', ['$http','$scope','$timeout','User', function($http,$
        
         if(($scope.userObject.email !== null || "") &&
             ($scope.userObject.password !== null || "")){
+                $scope.loading= true;
+                $timeout(function(){
+                    $scope.finishedLoadingSuccess= true;
+                    
+                },3000)
+                $timeout(function(){
+                    $scope.loading = false;
+                    $scope.finishedLoadingSuccess = false;
+
+                    $scope.fadeOutHomePage = true;
+                },5000)
                 console.log($scope.userObject)
-                User.create($scope.userObject).then(function(data){
-                    console.log(data)
-                })
+               // User.create($scope.userObject).then(function(data){
+               //     console.log(data)
+               // })
                 
             }else{
                 
