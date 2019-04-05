@@ -148,7 +148,7 @@
 
     </div>
     <div class="row">
-<div class = "col s12 ">
+<div class = "col s12 " ng-show="!loading && !finishedLoadingSuccess && fadeOutHomePage" >
   <div id= "profilecircle" class="center-align">
     <div class="row"></div>
     <div class="row"></div>
@@ -156,11 +156,11 @@
     <img  class="center-align"  ng-src="{{picture}}">
   </div>
 </div>
-<div class = "col s12 white">
+<div class = "col s12 white"ng-show="!loading && !finishedLoadingSuccess && fadeOutHomePage" >
 </div>
 
     </div>
-    <div  class=" animated fadeIn" >
+    <div  class=" animated fadeIn"ng-show="!loading && !finishedLoadingSuccess && fadeOutHomePage"  >
         <a href="#whatwedo" ng-class="{'nightmodewhite':nightMode,'black-text':!nightMode}">
           <p class="sidebarlinkstyle montserrat">Name</p>
         </a>
@@ -327,7 +327,7 @@
    
       </div>
       </div>-->
-    <div class="section  center-align "  style="background-color:black;" ng-class="{'nightmodenavigation':nightMode,'whitemodenavigation':!nightMode}">
+    <div ng-show="!loading && !finishedLoadingSuccess && fadeOutHomePage" class="section  center-align "  style="background-color:black;" ng-class="{'nightmodenavigation':nightMode,'whitemodenavigation':!nightMode}">
    
 
       
@@ -336,23 +336,48 @@
        
            
                       <div class ="col s12 left-align">
-                        <span class = "montserrat grey-text" style="font-size:40px; text-decoration:underline;">#1</span>
+                        <span class = "montserrat grey-text animated fadeIn" style="font-size:40px; text-decoration:underline;">#1</span>
                       </div>
         <div class = "col s12 left-align">
-          <i class = "material-icons grey-text text-darken-2" style="font-size:70px; text-decoration:underline; ">smartphone</i><span class="montserrat grey-text text-darken-2" style="font-size:50px">React Factory</span>
+          <i class = "material-icons grey-text text-darken-2 animated fadeIn" style="font-size:70px; text-decoration:underline; ">smartphone</i><span class="montserrat grey-text text-darken-2" style="font-size:50px">React Factory v1.0</span>
         </div>
         
           <div class = "col s12 grey">
         </div>
         <div class = "col s12 left-align ">
-            <p class="montserrat grey-text text-darken-2" style="font-size:50px">Details:</p>
+          <div class = "col s6">
+            <p class="montserrat grey-text text-darken-2" style="font-size:50px;text-decoration:underline">Details:</p>
+            <span class="montserrat grey-text flow-text truncate" style="font-size:40px">http://www.reactfactory.com</span>
 
+          </div>
+          <div class="col s6">
+              <p ng-click="checkProgress()" class="montserrat grey-text text-darken-2" style="font-size:50px;text-decoration:underline">Progress:</p>
+              <span class="montserrat grey-text" style="font-size:40px">{{progress}}%</span>
+  
+  
+          </div>
+            <div class = "col s6">
+            <p class="montserrat grey-text text-darken-2" style="font-size:50px; text-decoration:underline;">Tech Stack:</p>
+            <img src="./images/mdb.svg">
+            <img src="./images/a3.svg">
+            </div>
+            
+            
+            <!--<img src="./images/node.svg">-->
+            <div class = "col s6">
+            <p class="montserrat grey-text text-darken-2" style="font-size:50px; text-decoration:underline;">Software:</p>
+            </div>
+            <img src="./images/gemini.svg">
+            <img src="./images/warehouse.svg">
+            <img src="./images/calendar.svg">
+            <img src="./images/graph.svg">
+            <img src="./images/blogging.svg">
+
+            <br>
+            <i class="material-icons white-text">add</i><span class = "white-text">Install New Software</span>
         </div>
         <div class = "col s12 left-align ">
-            <p ng-click="checkProgress()" class="montserrat grey-text text-darken-2" style="font-size:50px">Progress:</p>
-            <span class="montserrat grey-text" style="font-size:40px">{{progress}}%</span>
-
-
+           
         </div>
   
 
