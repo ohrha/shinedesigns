@@ -35,6 +35,7 @@ app.controller('mainCtrl', ['$http','$scope','$timeout','User', function($http,$
     $scope.loading = false;
     $scope.fadeOutLoading = false;
     $scope.finishedLoadingSuccess = false;
+    $scope.picture="../images/moon.png"
     $scope.userObject = {
         userName : "",
         name : "",
