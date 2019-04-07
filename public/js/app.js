@@ -31,7 +31,7 @@ app.controller('mainCtrl', ['$http','$scope','$timeout','User','$interval', func
     $scope.fadeInContact = false;
     $scope.menuPressedContact = false;
     $scope.homePageOpen = true;
-    $scope.nightMode = false;
+    $scope.nightMode = true;
     $scope.loading = false;
     $scope.fadeOutLoading = false;
     $scope.finishedLoadingSuccess = false;
