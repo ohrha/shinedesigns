@@ -8,7 +8,9 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "gridfs-stream": "^1.1.1",
     "mongoose": "^5.4.22",
+    "mongoose-gridfs": "^0.6.2",
     "nodemon": "^1.18.10"
   },
   "devDependencies": {},

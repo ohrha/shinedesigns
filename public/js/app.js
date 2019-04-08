@@ -43,6 +43,12 @@ app.controller('mainCtrl', ['$http','$scope','$timeout','User','$interval', func
         email : "",
         password : ""
     }
+    User.getProfileImage("5caa4a61b3358b21e831cd2c").then(function(data){
+        console.log(data)
+    })
+    User.uploadProfileImage().then(function(data){
+        
+    })
     $scope.checkProgress = function(){
         $scope.progress = 0;
         $interval(function(){

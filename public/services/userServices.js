@@ -14,10 +14,12 @@ angular.module('userServices', []).config(function () {
 
         return $http.post("/api/users/create", userObject)
 
-
-
-
-
+    }
+    userFactory.getProfileImage = function(id){
+        return $http.get('/api/users/getprofileimage/'+id)
+    }
+    userFactory.uploadProfileImage = function(){
+        return $http.post('/api/users/uploadprofileimage')
     }
     return userFactory
 
