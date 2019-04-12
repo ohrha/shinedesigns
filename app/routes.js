@@ -1,5 +1,5 @@
 var User = require('./models/user');
-//var Attachment = require('./models/Attachment')
+//var Attachment = global.gridfs.model
 var bcrypt = require('bcrypt-nodejs');
 
 

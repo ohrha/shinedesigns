@@ -42,11 +42,12 @@ mongoose.connect(database.url, function(err){
         writestream.on('close',function(file){
             console.log(file.filename+" written to db.")
         })*/
-        const gridfs = require('mongoose-gridfs')({
-              collection: 'attachments',
-              model: 'Attachment'
-            });
-            const Attachment = gridfs.model
+        global.gridfs = mongooseGridFS({
+            collection: 'Attachments',
+            model: 'Attachment',
+            mongooseConnection: mongoose.connection
+          });
+            const Attachment = global.gridfs.model
         console.log("Successfully connected to Mlab/MongoDb @ "+ database.url)
 
     }

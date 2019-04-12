@@ -1,5 +1,5 @@
 (function(){
-var app = angular.module('store',['userServices']);
+var app = angular.module('store',['userServices','ngFileUpload']);
 
 																																																  
 
@@ -31,7 +31,7 @@ app.controller('mainCtrl', ['$http','$scope','$timeout','User','$interval', func
     $scope.fadeInContact = false;
     $scope.menuPressedContact = false;
     $scope.homePageOpen = true;
-    $scope.nightMode = true;
+    $scope.nightMode = false;
     $scope.loading = false;
     $scope.fadeOutLoading = false;
     $scope.finishedLoadingSuccess = false;
@@ -43,12 +43,13 @@ app.controller('mainCtrl', ['$http','$scope','$timeout','User','$interval', func
         email : "",
         password : ""
     }
-    User.getProfileImage("5caa4a61b3358b21e831cd2c").then(function(data){
+    /*User.getProfileImage("5caa4a61b3358b21e831cd2c").then(function(data){
         console.log(data)
     })
     User.uploadProfileImage().then(function(data){
         
     })
+    */
     $scope.checkProgress = function(){
         $scope.progress = 0;
         $interval(function(){
@@ -62,7 +63,7 @@ app.controller('mainCtrl', ['$http','$scope','$timeout','User','$interval', func
             }
            },50)
     }
-   
+ 
     $scope.submitUser = function(){
    
         if(($scope.userObject.email !== null || "") &&
@@ -73,10 +74,10 @@ app.controller('mainCtrl', ['$http','$scope','$timeout','User','$interval', func
                     
                 },3000)
                 $timeout(function(){
-                    $scope.loading = false;
-                    $scope.finishedLoadingSuccess = false;
+                   // $scope.loading = false;
+                   // $scope.finishedLoadingSuccess = false;
 
-                    $scope.fadeOutHomePage = true;
+                   // $scope.fadeOutHomePage = true;
                 },5000)
                
                     
@@ -91,6 +92,7 @@ app.controller('mainCtrl', ['$http','$scope','$timeout','User','$interval', func
                 
             }
     }
+    $scope.submitUser()
     $scope.nightModeToggle = function(){
         console.log("nightModeToggled")
         if(!$scope.nightMode){

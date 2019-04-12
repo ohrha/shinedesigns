@@ -3,7 +3,7 @@
 <head>
 
   <title>Welcome To Shine Designs!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -18,6 +18,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 
   <script src="./js/app.js" type="text/javascript"></script>
+  <script src="./js/ng-file-upload-shim.js" type="text/javascript"></script>
+  <script src="./js/ng-file-upload.js" type="text/javascript"></script>
   <script src="./services/userServices.js" type="text/javascript"></script>
 
 </head>
@@ -117,535 +119,61 @@
       </div>
     </div>
   </div>
-  <div id="sidebar" ng-class="{'nightmodenavigation':nightMode,'whitemodenavigation':!nightMode}"
-    class="animated fadeIn">
 
+  <div class="row">
 
-    <div class="row">
+    <div class="col s12 center-align animated fadeIn" ng-show="loading">
+      <div class="row"></div>
+      <div class="row"></div>
 
-    </div>
-    <div class="row">
+      <div class="row"></div>
 
+      <div class="row"></div>
 
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="row"></div>
 
-    </div>
-    <div class="row">
+      <div class="row"></div>
 
-    </div>
-    <div class="row">
+      <div class="row"></div>
 
-    </div>
-    <div class="row">
+      <div class="row"></div>
 
-    </div>
-    <div class="row">
-
-    </div>
-    <div class="row">
-
-    </div>
-    <div class="row">
-
-    </div>
-    <div class="row">
-      <div class="col s12 " ng-show="!loading && !finishedLoadingSuccess && fadeOutHomePage">
-        <div id="profilecircle" class="center-align">
-          <div class="row"></div>
-          <div class="row"></div>
-          <div class="row"></div>
-          <img class="center-align" ng-src="{{picture}}">
+      <i ng-show="!nightMode && !finishedLoadingSuccess" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:40px;"></i>
+      <p ng-show="!nightMode && !finishedLoadingSuccess" class="montserrat animated flash infinite" style="font-size:20px; ">LOADING </p>
+      <i ng-show="nightMode && !finishedLoadingSuccess" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw grey-text "
+        style="font-size:40px;" ng-class="{'animated':fadeOutLoading, 'fadeOut':fadeOutLoading}"></i>
+      <p ng-show="nightMode && !finishedLoadingSuccess" class="montserrat animated flash infinite grey-text"
+        style="font-size:20px; " ng-class="{ 'fadeOut':fadeOutLoading}">LOADING </p>
+        <i ng-show="!nightMode && finishedLoadingSuccess" class="material-icons animated  flash   "
+        style="font-size:40px;" ng-class="{'animated':fadeOutLoading, 'fadeOut':fadeOutLoading}">build</i>
+        <p ng-show="!nightMode && finishedLoadingSuccess" class="montserrat animated  flash  "
+        style="font-size:20px; " ng-class="{ 'fadeOut':fadeOutLoading}">UNDER CONSTRUCTION! </p>
+      <i ng-show="nightMode && finishedLoadingSuccess" class="material-icons animated  flash  grey-text "
+        style="font-size:40px;" ng-class="{'animated':fadeOutLoading, 'fadeOut':fadeOutLoading}">build</i>
+      <p ng-show="nightMode && finishedLoadingSuccess" class="montserrat animated  flash  grey-text"
+        style="font-size:20px; " ng-class="{ 'fadeOut':fadeOutLoading}">UNDER CONSTRUCTION! </p>
+        <div class = "col s3"></div>
+        <div class = "col s6" id="shobo" ng-show="!nightMode && finishedLoadingSuccess">
+          <p  class="montserrat animated flow-text  flash "
+          style="font-size:20px; " ng-class="{ 'fadeOut':fadeOutLoading}">We're undergoing a full re-imagening of the Shine Designs Patented App Development Process.</p>
+          <p class="montserrat animated flow-text  flash  "
+          style="font-size:20px; " ng-class="{ 'fadeOut':fadeOutLoading}">Stay Tuned!</p>
+          </div>
+        <div class = "col s6" id="shobo" ng-show="nightMode && finishedLoadingSuccess">
+        <p  class="montserrat animated flow-text  flash  grey-text"
+        style="font-size:20px; " ng-class="{ 'fadeOut':fadeOutLoading}">We're undergoing a full re-imagening of the Shine Designs Patented App Development Process.</p>
+        <p  class="montserrat animated flow-text  flash  grey-text"
+        style="font-size:20px; " ng-class="{ 'fadeOut':fadeOutLoading}">Stay Tuned!</p>
         </div>
-      </div>
-      <div class="col s12 white" ng-show="!loading && !finishedLoadingSuccess && fadeOutHomePage">
-      </div>
+        <div class = "col s3"></div>
 
-    </div>
-    <div class=" animated fadeIn" ng-show="!loading && !finishedLoadingSuccess && fadeOutHomePage">
-      <a href="#whatwedo" ng-class="{'nightmodewhite':nightMode,'black-text':!nightMode}">
-        <p class="sidebarlinkstyle montserrat">Name</p>
-      </a>
-
-      <a class="active" href="#white" style="color:#ddd;">
-        <p class="sidebarinnerlinkstyle montserrat">David Solomon</p>
-      </a>
-
-      <a href="#whatyoudo" ng-class="{'nightmodewhite':nightMode,'black-text':!nightMode}">
-        <p class="sidebarlinkstyle montserrat">Organization</p>
-      </a>
-
-      <a href="#reactapp" style="color:#ddd;">
-        <p class="sidebarinnerlinkstyle montserrat">React Factories</p>
-      </a>
-
-    </div>
-    <div class="row">
-
-    </div>
-    <div class="row">
-
-    </div>
-    <div class="row">
-
-    </div>
-    <div ng-show="!fadeOutHomePage" class=" animated fadeIn">
-      <a href="#whatwedo" ng-class="{'nightmodewhite':nightMode,'black-text':!nightMode}">
-        <p class="sidebarlinkstyle montserrat">What We Do</p>
-      </a>
-
-      <a class="active" href="#white" style="color:#ddd;">
-        <p class="sidebarinnerlinkstyle montserrat">Angular</p>
-      </a>
-
-      <a href="#whatyoudo" ng-class="{'nightmodewhite':nightMode,'black-text':!nightMode}">
-        <p class="sidebarlinkstyle montserrat">What You Do</p>
-      </a>
-
-      <a href="#reactapp" style="color:#ddd;">
-        <p class="sidebarinnerlinkstyle montserrat">React</p>
-      </a>
-
-    </div>
-    <div ng-show="fadeInContact" class=" animated fadeIn">
-      <p class="sidebarlinkstyle montserrat black-text">Web Applications</p>
-
-      <a class="active" href="#angularapp">
-        <p class="sidebarinnerlinkstyle montserrat" style="color:#ddd;">Angular</p>
-      </a>
-
-      <p class="sidebarlinkstyle montserrat black-text">Web Applications</p>
-
-      <a href="#reactapp">
-        <p class="sidebarinnerlinkstyle montserrat" style="color:#ddd;">React</p>
-      </a>
-
-    </div>
-
-  </div>
-
-  <div class="container animated fadeIn ">
-
-    <div class="row">
-
-    </div>
-    <div class="row">
-
-    </div>
-    <div class="row">
-
-    </div>
-    <div class="row">
-
-      <div class="col s12 center-align animated fadeIn" ng-show="loading">
-        <div class="row"></div>
-        <div class="row"></div>
-
-        <div class="row"></div>
-
-        <div class="row"></div>
-
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-
-        <div class="row"></div>
-
-        <div class="row"></div>
-
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-
-        <div class="row"></div>
-
-
-
-
-        <i ng-show="!nightMode" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:40px;"></i>
-        <p ng-show="!nightMode" class="montserrat animated flash infinite" style="font-size:20px; ">LOADING </p>
-        <i ng-show="nightMode && !finishedLoadingSuccess" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw grey-text "
-          style="font-size:40px;" ng-class="{'animated':fadeOutLoading, 'fadeOut':fadeOutLoading}"></i>
-        <p ng-show="nightMode && !finishedLoadingSuccess" class="montserrat animated flash infinite grey-text"
-          style="font-size:20px; " ng-class="{ 'fadeOut':fadeOutLoading}">LOADING </p>
-        <i ng-show="nightMode && finishedLoadingSuccess" class="fa fa-check-circle animated  flash  grey-text "
-          style="font-size:40px;" ng-class="{'animated':fadeOutLoading, 'fadeOut':fadeOutLoading}"></i>
-        <p ng-show="nightMode && finishedLoadingSuccess" class="montserrat animated  flash grey-text"
-          style="font-size:20px; " ng-class="{ 'fadeOut':fadeOutLoading}">SUCCESS! </p>
-        <!--<i class="fa fa-cog fa-spin fa-3x fa-fw" ></i>-->
-
-      </div>
-    </div>
-    <div ng-show="!loading && !finishedLoadingSuccess && fadeOutHomePage" class="section  center-align "
-      style="background-color:black;" ng-class="{'nightmodenavigation':nightMode,'whitemodenavigation':!nightMode}">
-
-      <div class="row ">
-<div class = "col s12">
-</div>
-<div class ="row">
-</div>
-<div class ="row">
-    </div>
-    <div class ="row">
-        </div>
         
-<div class="col s12 right-align">
-    <div class = "col s3">
-            <i class="material-icons grey-text text-darken-2 animated fadeIn"
-            style="font-size:70px; text-decoration:underline; ">smartphone</i>
-        </div>
-        <div class = "col s3">
-                <i class="material-icons grey-text text-darken-2 animated fadeIn"
-                style="font-size:70px; text-decoration:underline; ">smartphone</i>
-            </div>
-            <div class = "col s3">
-                    <i class="material-icons grey-text text-darken-2 animated fadeIn"
-                    style="font-size:70px; text-decoration:underline; ">smartphone</i>
-                </div>
-                <div class = "col s3">
-                        <i class="material-icons grey-text text-darken-2 animated fadeIn"
-                        style="font-size:70px; text-decoration:underline; ">smartphone</i>
-                    </div>
-                    <div class = "col s3">
-                            <i class="material-icons grey-text text-darken-2 animated fadeIn"
-                            style="font-size:70px; text-decoration:underline; ">smartphone</i>
-                        </div>
-                        <div class = "col s3">
-                                <i class="material-icons grey-text text-darken-2 animated fadeIn"
-                                style="font-size:70px; text-decoration:underline; ">smartphone</i>
-                            </div>
-                            <div class = "col s3">
-                                    <i class="material-icons grey-text text-darken-2 animated fadeIn"
-                                    style="font-size:70px; text-decoration:underline; ">smartphone</i>
-                                </div>
-                                <div class = "col s3">
-                                        <i class="material-icons grey-text text-darken-2 animated fadeIn"
-                                        style="font-size:70px; text-decoration:underline; ">smartphone</i>
-                                    </div>
-       
-            
-      </div>
+      <!--<i class="fa fa-cog fa-spin fa-3x fa-fw" ></i>-->
 
-        <div class="col s12 left-align">
-          <span class="montserrat grey-text animated fadeIn"
-            style="font-size:40px; text-decoration:underline;">#1</span>
-        </div>
-        <div class="col s12 left-align">
-          <i class="material-icons grey-text text-darken-2 animated fadeIn"
-            style="font-size:70px; text-decoration:underline; ">smartphone</i><span
-            class="montserrat grey-text text-darken-2" style="font-size:50px">React Factory v1.0</span>
-        </div>
-
-        <div class="col s12 grey">
-        </div>
-        <div class="col s12 left-align ">
-          <div class="col s6">
-            <p class="montserrat grey-text text-darken-2" style="font-size:50px;text-decoration:underline">Details:</p>
-            <span class="montserrat grey-text flow-text truncate"
-              style="font-size:40px">http://www.reactfactory.com</span>
-
-          </div>
-          <div class="col s6">
-            <p ng-click="checkProgress()" class="montserrat grey-text text-darken-2"
-              style="font-size:50px;text-decoration:underline">Progress:</p>
-            <span class="montserrat grey-text" style="font-size:40px">{{progress}}%</span>
-
-
-          </div>
-          <div class="col s6">
-            <p class="montserrat grey-text text-darken-2" style="font-size:50px; text-decoration:underline;">Tech Stack:
-            </p>
-            <img src="./images/mdb.svg">
-            <img src="./images/a3.svg">
-          </div>
-
-
-          <!--<img src="./images/node.svg">-->
-          <div class="col s6">
-            <p class="montserrat grey-text text-darken-2" style="font-size:50px; text-decoration:underline;">Software:
-            </p>
-          </div>
-          <img src="./images/gemini.svg">
-          <img src="./images/warehouse.svg">
-          <img src="./images/calendar.svg">
-          <img src="./images/graph.svg">
-          <img src="./images/blogging.svg">
-
-          <br>
-          <i class="material-icons white-text">add</i><span class="white-text">Install New Software</span>
-        </div>
-        <div class="col s12 left-align ">
-
-        </div>
-
-
-
-      </div>
-    </div>
-
-    <div ng-show="!loading && !finishedLoadingSuccess && fadeOutHomePage" class="section  center-align "
-      style="background-color:black;" ng-class="{'nightmodenavigation':nightMode,'whitemodenavigation':!nightMode}">
-
-
-
-
-      <div class="row ">
-
-
-        <div class="col s12 left-align">
-          <span class="montserrat grey-text animated fadeIn"
-            style="font-size:40px; text-decoration:underline;">#1</span>
-        </div>
-        <div class="col s12 left-align">
-          <i class="material-icons grey-text text-darken-2 animated fadeIn"
-            style="font-size:70px; text-decoration:underline; ">smartphone</i><span
-            class="montserrat grey-text text-darken-2" style="font-size:50px">React Factory v1.0</span>
-        </div>
-
-        <div class="col s12 grey">
-        </div>
-        <div class="col s12 left-align ">
-          <div class="col s6">
-            <p class="montserrat grey-text text-darken-2" style="font-size:50px;text-decoration:underline">Details:</p>
-            <span class="montserrat grey-text flow-text truncate"
-              style="font-size:40px">http://www.reactfactory.com</span>
-
-          </div>
-          <div class="col s6">
-            <p ng-click="checkProgress()" class="montserrat grey-text text-darken-2"
-              style="font-size:50px;text-decoration:underline">Progress:</p>
-            <span class="montserrat grey-text" style="font-size:40px">{{progress}}%</span>
-
-
-          </div>
-          <div class="col s6">
-            <p class="montserrat grey-text text-darken-2" style="font-size:50px; text-decoration:underline;">Tech Stack:
-            </p>
-            <img src="./images/mdb.svg">
-            <img src="./images/a3.svg">
-          </div>
-
-
-          <!--<img src="./images/node.svg">-->
-          <div class="col s6">
-            <p class="montserrat grey-text text-darken-2" style="font-size:50px; text-decoration:underline;">Software:
-            </p>
-          </div>
-          <img src="./images/gemini.svg">
-          <img src="./images/warehouse.svg">
-          <img src="./images/calendar.svg">
-          <img src="./images/graph.svg">
-          <img src="./images/blogging.svg">
-
-          <br>
-          <i class="material-icons white-text">add</i><span class="white-text">Install New Software</span>
-        </div>
-        <div class="col s12 left-align ">
-
-        </div>
-
-
-
-      </div>
-    </div>
-
-    <div class="section  center-align" ng-show="!fadeOutHomePage && !loading"
-      ng-class="{'nightmodenavigation':nightMode,'whitemodenavigation':!nightMode}">
-      <div class="row container">
-
-
-
-
-        <div ng-show="!loading" ng-class="{'arrow-up-grey':nightMode,'whitemodenavigation':!nightMode}"
-          class="arrow-up center-align section scrollspy" id="black">
-
-        </div>
-        <div style="position:absolute; top:70%;left:32%">
-          <p class=" montserrat white-text text-lighten-4" style="font-size:30px;">Sign Up Today And Get Building!</p>
-        </div>
-        <div style="position:absolute; top:70%;left:32%">
-          <p class=" montserrat white-text text-lighten-4" style="font-size:30px;">Sign Up Today And Get Building!</p>
-        </div>
-        <div style="position:absolute; top:85%;left:47%;" style="border:2px solid white;">
-          <a href="#white"> <i class="material-icons white-text animated heartBeat infinite"
-              style="font-size:50px;">arrow_drop_down_circle</i></a>
-
-        </div>
-
-        <div ng-show="!fadeOutHomePage && !loading" class="arrow-down section scrollspy" id="white">
-
-          <div style="position:absolute; top:100%;left:30%;">
-            <div class="row">
-
-            </div>
-            <div class="row">
-
-            </div>
-            <div class="row">
-
-              <div class="inputfields">
-                <div class="input-field col s12">
-                  <input value="Alvin" name="email" ng-model="userObject.email" id="first_name2" type="email"
-                    class="validate">
-                  <label class="active" for="first_name2">Email</label>
-                </div>
-                <div class="input-field col s12">
-                  <input value="Alvin" name="password" ng-model="userObject.password" id="first_name2" type="password"
-                    class="validate">
-                  <label class="active" for="first_name2">Password</label>
-                </div>
-                <a ng-click="submitUser()" class="waves-effect waves-light btn black">Let's Go!</a>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div ng-show="!fadeOutHomePage && !loading" class="section black scrollspy" id="whatwedo">
-        <div class="row">
-        </div>
-        <div class="row">
-        </div>
-        <div class="row">
-        </div>
-        <div class="col s2">
-        </div>
-        <div class="col s8">
-          <h3 class='montserrat white-text center-align'>So You Want A Web Application?</h3>
-        </div>
-        <div class="col s2">
-        </div>
-
-        <p class='montserrat white-text'>Shaboodiacasto</p>
-        <p class='montserrat white-text'>Shaboodiacasto</p>
-        <p class='montserrat white-text'>Shaboodiacasto</p>
-        <p class='montserrat white-text'>Shaboodiacasto</p>
-        <p class='montserrat white-text'>Shaboodiacasto</p>
-        <p class='montserrat white-text'>Shaboodiacasto</p>
-        <p class='montserrat white-text'>Shaboodiacasto</p>
-        <p class='montserrat white-text'>Shaboodiacasto</p>
-        <p class='montserrat white-text'>Shaboodiacasto</p>
-        <p class='montserrat white-text'>Shaboodiacasto</p>
-
-      </div>
-      <div ng-show="!fadeOutHomePage &&!loading" class="section white scrollspy" id="whatyoudo">
-        <div class="row">
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="col s3">
-            <i class='material-icons black-text'>assignment</i>
-          </div>
-          <div class="col s3 animated slideInLeft">
-            <i class='material-icons black-text'>arrow_forward</i>
-          </div>
-          <div class="col s3">
-            <i class='material-icons black-text'>build</i>
-          </div>
-          <div class="col s3 animated slideInLeft">
-            <i class='material-icons black-text'>arrow_forward</i>
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-          <div class="row">
-          </div>
-        </div>
-
-
-
-      </div>
-    </div>
-    <div ng-show="fadeInContact" class="animated fadeIn">
-      <div class="section scrollspy" id="angularapp">
-        <div class="slider " style="height: 440px;">
-
-          <ul class="slides" style="height: 400px;">
-
-            <li class="active" style="opacity: 1;">
-              <img
-                style='background-image: url("https://www.mindinventory.com/blog/wp-content/uploads/2017/08/reactjs.jpg");'
-                src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-              <!-- random image -->
-              <div class="caption center-align" style="opacity: 1; transform: translateX(0px) translateY(0px);">
-                <h3>This is our big Tagline!</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-              </div>
-            </li>
-          </ul>
-          <ul class="indicators">
-            <li class="indicator-item active"></li>
-          </ul>
-        </div>
-      </div>
-      <div class="row"></div>
-      <div class="row"></div>
-      <div class="row"></div>
-      <div class="row"></div>
-      <div class="slider section scrollspy" id="reactapp" style="height: 440px;">
-
-        <ul class="slides" style="height: 400px;">
-
-          <li class="active" style="opacity: 1;">
-            <img
-              style='background-image: url("https://blog.jscrambler.com/content/images/2018/01/protecting-angular-js-app-1.png");'
-              src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-            <!-- random image -->
-            <div class="caption center-align" style="opacity: 1; transform: translateX(0px) translateY(0px);">
-              <h3>This is our big Tagline!</h3>
-              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </div>
-          </li>
-        </ul>
-        <ul class="indicators">
-          <li class="indicator-item active"></li>
-        </ul>
-      </div>
     </div>
   </div>
-
-
-
-
 
   <script>
     $(document).ready(function () {

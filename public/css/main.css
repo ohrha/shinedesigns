@@ -102,12 +102,28 @@ html, body {
     border-bottom: 80vh solid black ;
 
   }
+ 
   #profilecircle{
       height:150px;
       width:150px;
       border-radius:50%;
       background-color: white;
   }
+  #shobo{
+      border-radius:25px;
+      border:2px solid grey;
+      
+  }
+
+  #rcorners2{
+    -webkit-border-radius:25px; 
+    -moz-border-radius:25px;
+      border-radius: 25px;
+      border: 2px solid #73AD21;
+      padding: 20px; 
+      width: 200px;
+      height: 150px; 
+    }
   .inputfields{
       width:80vh;
 
