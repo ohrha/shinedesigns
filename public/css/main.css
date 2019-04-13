@@ -102,7 +102,19 @@ html, body {
     border-bottom: 80vh solid black ;
 
   }
- 
+#hovero{
+    
+    transition:.2s;
+}
+#hoverobuild{
+    font-size:35px;
+    transition:.2s;
+    text-decoration:none
+}
+#hoverobuild:hover{
+    text-decoration:underline;
+}
+
   #profilecircle{
       height:150px;
       width:150px;

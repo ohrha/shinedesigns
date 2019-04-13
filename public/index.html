@@ -1,4 +1,4 @@
-<html ng-controller="mainCtrl as main" ng-app="store">
+<html ng-controller="mainCtrl as main" ng-app="store" class = "animated fadeIn">
 
 <head>
 
@@ -26,9 +26,9 @@
 
 <body ng-class="{'nightmodenavigation':nightMode,'whitemodenavigation':!nightMode}">
 
-  <div id="navbar" class="whitemodenavigation"
+  <div id="navbar" class="whitemodenavigation animated fadeIn"
     ng-class="{'nightmodenavigation': nightMode,'whitemodenavigation':!nightMode}">
-    &nbsp; <div class="row ">
+    &nbsp; <div class="row " >
       <div ng-show="nightMode">
         <h2 class="center-align shinedesign grey-text"
           style=" position:absolute; text-align:center;left:25%; opacity:.2;top:-20%;font-family:'Montserrat';">Shine
@@ -67,24 +67,29 @@
           <a href="#">
             <div ng-show=!nightMode class="col s4 right-align animated slideInDown"><i
                 class="material-icons animated transitions black-text "
-                ng-class="{'fadeOutDown':menuPressedContact}">camera</i> </div>
+                ng-class="{'fadeOutDown':menuPressedContact}"
+                id="hovero">camera</i> </div>
           </a>
           <a href="#">
             <div ng-show="nightMode" class="col s4 "><i class="material-icons animated fadeIn grey-text "
-                style="font-size:30px" ng-class="{'fadeOut':fadeOutHome}">home</i> </div>
+                style="font-size:30px" ng-class="{'fadeOut':fadeOutHome}"
+                id="hovero">home</i> </div>
           </a>
           <a href="#">
             <div ng-show='!nightMode' class="col s4 "><i class="material-icons animated fadeIn black-text "
-                style="font-size:30px" ng-class="{'fadeOut':fadeOutHome}">home</i> </div>
+                style="font-size:30px" ng-class="{'fadeOut':fadeOutHome}"
+                id="hovero">home</i> </div>
           </a>
           <a href="#">
-            <div ng-show="nightMode" class="col s4 left-align animated slideInUp " ng-click="openContact()"> <i
+            <div ng-show="nightMode" class="col s4 left-align animated slideInUp " > <i
                 class="material-icons animated grey-text "
+                id="hovero"
                 ng-class="{'fadeOutUp':menuPressedContact,'makesmall':menuPressedContact }">business</i></div>
           </a>
           <a href="#">
-            <div ng-show="!nightMode" class="col s4 left-align animated slideInUp " ng-click="openContact()"> <i
+            <div ng-show="!nightMode" class="col s4 left-align animated slideInUp " > <i
                 class="material-icons animated black-text "
+                id="hovero"
                 ng-class="{'fadeOutUp':menuPressedContact,'makesmall':menuPressedContact }">business</i></div>
           </a>
 
@@ -94,11 +99,13 @@
           <a href="#"></a>
           <div ng-show="nightMode" class="col s3 right-align  animated slideInLeft"> <i
               class="material-icons animated grey-text " ng-class="{'fadeOutRight':menuPressedContact}"
-              style="font-size:35px">build</i></div></a>
+              style="font-size:35px"
+              id="hoverobuild">build</i></div></a>
           <a href="#"></a>
-          <div ng-show="!nightMode" class="col s3 right-align  animated slideInLeft"> <i
-              class="material-icons animated black-text" ng-class="{'fadeOutRight':menuPressedContact}"
-              style="font-size:35px">build</i></div></a>
+          <div ng-show="!nightMode" class="col s3 right-align  "> <i
+              class="material-icons animated black-text fadeIn" ng-class="{'fadeOutRight':menuPressedContact}"
+              
+              id="hoverobuild">build</i></div></a>
           <div class="col s3 right-align"> </div>
           <div class="col s3 "><i class="fas fa-moon" style="font-size:20px;"></i> </div>
         </div>
@@ -146,7 +153,7 @@
         style="font-size:40px;" ng-class="{'animated':fadeOutLoading, 'fadeOut':fadeOutLoading}"></i>
       <p ng-show="nightMode && !finishedLoadingSuccess" class="montserrat animated flash infinite grey-text"
         style="font-size:20px; " ng-class="{ 'fadeOut':fadeOutLoading}">LOADING </p>
-        <i ng-show="!nightMode && finishedLoadingSuccess" class="material-icons animated  flash   "
+        <i ng-show="!nightMode && finishedLoadingSuccess" class="material-icons animated  flash   " 
         style="font-size:40px;" ng-class="{'animated':fadeOutLoading, 'fadeOut':fadeOutLoading}">build</i>
         <p ng-show="!nightMode && finishedLoadingSuccess" class="montserrat animated  flash  "
         style="font-size:20px; " ng-class="{ 'fadeOut':fadeOutLoading}">UNDER CONSTRUCTION! </p>

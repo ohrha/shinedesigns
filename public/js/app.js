@@ -6,7 +6,6 @@ var app = angular.module('store',['userServices','ngFileUpload']);
 app.config(function($httpProvider){
 
 
-
 	console.log("Angular.js loaded")
 
 	
@@ -16,6 +15,10 @@ app.config(function($httpProvider){
 });
 app.controller('mainCtrl', ['$http','$scope','$timeout','User','$interval', function($http,$scope,$timeout,User,$interval) {
 
+        
+    $timeout(function(){
+        $scope.loaded = true;
+    },500)
     $scope.contactSlideInLeft = false;
     $scope.contactSlideUpDown = false;
     $scope.contactSlideInRight = false;
@@ -43,6 +46,7 @@ app.controller('mainCtrl', ['$http','$scope','$timeout','User','$interval', func
         email : "",
         password : ""
     }
+     
     /*User.getProfileImage("5caa4a61b3358b21e831cd2c").then(function(data){
         console.log(data)
     })
