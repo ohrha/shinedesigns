@@ -29,16 +29,7 @@
   <div id="navbar" class="whitemodenavigation animated fadeIn"
     ng-class="{'nightmodenavigation': nightMode,'whitemodenavigation':!nightMode}">
     &nbsp; <div class="row " >
-      <div ng-show="nightMode">
-        <h2 class="center-align shinedesign grey-text"
-          style=" position:absolute; text-align:center;left:25%; opacity:.2;top:-20%;font-family:'Montserrat';">Shine
-          Designs</h2>
-      </div>
-      <div ng-show="!nightMode">
-        <h2 class="center-align shinedesign"
-          style=" position:absolute; text-align:center;left:25%; opacity:.2;top:-20%;font-family:'Montserrat';">Shine
-          Designs</h2>
-      </div>
+     
       <div class="col s3">
 
       </div>
@@ -146,6 +137,16 @@
       <div class="row"></div>
 
       <div class="row"></div>
+      <div ng-show="nightMode">
+        <h2 class="center-align shinedesign grey-text"
+          style="  text-align:center; opacity:.6;top:-20%;font-family:'Montserrat';">Shine
+          Designs</h2>
+      </div>
+      <div ng-show="!nightMode">
+        <h2 class="center-align shinedesign black-text text-darken-4"
+          style="  text-align:center; opacity:.6;top:-20%;font-family:'Montserrat';">Shine
+          Designs</h2>
+      </div>
 
       <i ng-show="!nightMode && !finishedLoadingSuccess" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:40px;"></i>
       <p ng-show="!nightMode && !finishedLoadingSuccess" class="montserrat animated flash infinite" style="font-size:20px; ">LOADING </p>
